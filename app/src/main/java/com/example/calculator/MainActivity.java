@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,9 +29,19 @@ public class MainActivity extends AppCompatActivity {
 
         text = findViewById(R.id.textView2);
 
+
+
         sum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String input1 = num1.getText().toString();
+                String input2 = num2.getText().toString();
+                if(input1.isEmpty() || input2.isEmpty())
+                {
+                    Toast.makeText(MainActivity.this, "Please enter both numbers", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 double result = Double.parseDouble(num1.getText().toString()) + Double.parseDouble(num2.getText().toString());
                 text.setText("Sum is: " +  String.format("%.2f", result));
             }
@@ -40,6 +51,13 @@ public class MainActivity extends AppCompatActivity {
         subtract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String input1 = num1.getText().toString();
+                String input2 = num2.getText().toString();
+
+                if (input1.isEmpty() || input2.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Please enter both numbers", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 double result = Double.parseDouble(num1.getText().toString()) - Double.parseDouble(num2.getText().toString());
                 text.setText("Subtract is: " + String.format("%.2f", result));
             }
@@ -49,6 +67,13 @@ public class MainActivity extends AppCompatActivity {
         multiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String input1 = num1.getText().toString();
+                String input2 = num2.getText().toString();
+                if(input1.isEmpty() || input2.isEmpty())
+                {
+                    Toast.makeText(MainActivity.this, "Please enter both numbers", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 double result = Double.parseDouble(num1.getText().toString()) * Double.parseDouble(num2.getText().toString());
                 text.setText("Multilpy is: " + String.format("%.2f", result));
             }
@@ -58,6 +83,14 @@ public class MainActivity extends AppCompatActivity {
         divide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String input1 = num1.getText().toString();
+                String input2 = num2.getText().toString();
+                if(input1.isEmpty() || input2.isEmpty())
+                {
+                    Toast.makeText(MainActivity.this, "Please enter both numbers", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 double result = Double.parseDouble(num1.getText().toString()) / Double.parseDouble(num2.getText().toString());
                 text.setText("Divide is: " + String.format("%.2f", result));
             }
