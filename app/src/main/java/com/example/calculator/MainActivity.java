@@ -35,5 +35,33 @@ public class MainActivity extends AppCompatActivity {
                 text.setText("Sum is: " +  String.format("%.2f", result));
             }
         });
+
+
+        subtract.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double result = Double.parseDouble(num1.getText().toString()) - Double.parseDouble(num2.getText().toString());
+                text.setText("Subtract is: " + String.format("%.2f", result));
+            }
+        });
+
+
+        multiply.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double result = Double.parseDouble(num1.getText().toString()) * Double.parseDouble(num2.getText().toString());
+                text.setText("Multilpy is: " + String.format("%.2f", result));
+            }
+        });
+
+
+        divide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double result = Double.parseDouble(num1.getText().toString()) / Double.parseDouble(num2.getText().toString());
+                text.setText("Divide is: " + String.format("%.2f", result));
+            }
+        });
+
     }
 }
