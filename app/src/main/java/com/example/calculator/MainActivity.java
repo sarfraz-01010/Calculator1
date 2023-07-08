@@ -3,6 +3,7 @@ package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,5 +27,13 @@ public class MainActivity extends AppCompatActivity {
         divide = findViewById(R.id.button4);
 
         text = findViewById(R.id.textView2);
+
+        sum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double result = Double.parseDouble(num1.getText().toString()) + Double.parseDouble(num2.getText().toString());
+                text.setText("Sum is: " +  String.format("%.2f", result));
+            }
+        });
     }
 }
